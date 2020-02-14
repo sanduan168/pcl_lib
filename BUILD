@@ -22,7 +22,7 @@ filegroup(
 )
 
 cc_library(
-    name = "opencv",
+    name = "pcl",
     srcs = select({
         ":k8-gcc4.8": glob(["lib/*.a*"]),
         ":k8-gcc5.4": glob(["lib-gcc5.4/*.a*"]),
@@ -37,7 +37,7 @@ cc_library(
         "include/pcl-1.7/pcl/**/**/**/*.hpp",
         "include/pcl-1.7/pcl/**/**/**/*.h",
     ]),
-    includes = ["include/pcl-1.7/pcl"],
+    includes = ["include/pcl-1.7"],
     visibility = ["//visibility:public"], 
     linkstatic = 1,
 )
